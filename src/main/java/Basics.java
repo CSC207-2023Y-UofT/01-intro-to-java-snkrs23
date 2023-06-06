@@ -144,7 +144,7 @@ public class Basics {
          *                you may use them if you wish.
          */
         StringBuilder ret = new StringBuilder();
-        String[] SplitWords = to_split.split("", 7);
+        String[] SplitWords = to_split.split(" ", 7);
         for (String word: SplitWords){
             ret.append(word.charAt(0));
         }
