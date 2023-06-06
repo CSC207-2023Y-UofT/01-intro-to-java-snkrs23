@@ -2,7 +2,7 @@
  * This file contains a few exercises to familiarize you with Java.
  * You should read this file from top-to-bottom. Any tasks you are to complete
  * are labelled with TODO
- *
+ * <p>
  * For your convenience, we have also included references to the
  * relevant readings for each task.
  */
@@ -10,9 +10,9 @@
 /**
  *  1. In Java, no code can exist outside of a class. Unlike Python which uses
  *    functions, all code in Java uses methods.
- *
+ * <p>
  *    For this exercise, all of our code is within the Basics class.
- *
+ * <p>
  *    (Relevant reading: 1.1.1. Defining classes)
  */
 public class Basics {
@@ -25,10 +25,10 @@ public class Basics {
      *        public static void main(final String[] args){
      *            // Code goes in here
      *        }
-     *
+     * <p>
      *    When you run this file (Basics.java), the code within the main
      *    method is run.
-     *
+     * <p>
      *    (Relevant reading: 1.1.2. Defining methods)
      */
     public static void main(final String[] args) {
@@ -43,6 +43,7 @@ public class Basics {
         /* TODO (Task 1): Write a line of code below that prints the string
          *                Hello World!
          */
+        System.out.println("Hello World!");
 
 
 
@@ -62,7 +63,7 @@ public class Basics {
          * TODO (Task 2): Create a variable named my_variable and assign it the
          *                value 100.
          */
-
+        int my_variable = 100;
 
 
         /* Do not remove the line below: if you did task 2 correctly, then
@@ -99,7 +100,9 @@ public class Basics {
          * Current count: 1
          * Current count: 0
          */
-
+        for (int i = 10; i >= 0; i--) {
+            System.out.println("Current count: " + i);
+        }
 
     }
 
@@ -141,9 +144,10 @@ public class Basics {
          *                you may use them if you wish.
          */
         StringBuilder ret = new StringBuilder();
-
-        // Fill in the rest of the body here
-
+        String[] SplitWords = to_split.split("", 7);
+        for (String word: SplitWords){
+            ret.append(word.charAt(0));
+        }
         return ret.toString();
     }
 
@@ -163,16 +167,15 @@ public class Basics {
      */
     public static int oddSum(int[] arr) {
         int current_sum = 0;
-
-        /* TODO (Task 5): Complete this method body using a for-loop.
-         *                You can find the length of an array by using the
-         *                .length attribute (e.g. arr.length)
-         *                You can index into arrays as we do in Python
-         *                (e.g. arr[i] gives you the item at index i).
-         */
-
+        if (arr.length > 1) {
+            for (int i = 0; i < arr.length; i++) {
+                if (i % 2 != 0)
+                    current_sum += arr[i];
+            }
+        }
         return current_sum;
     }
+
 
 
     /*
